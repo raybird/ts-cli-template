@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "build:standalone": "bun build --compile ./cli.ts --outfile ./dist/monorepo"
+  },
   "dependencies": {
     "commander": "^12.1.0"
   },
