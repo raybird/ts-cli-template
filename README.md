@@ -45,12 +45,23 @@
   ./cli deploy
   ```
 
+## 編譯獨立執行檔
+
+先依照安裝步驟執行 `pnpm install`，並準備支援單檔編譯的 [Bun](https://bun.com/docs/installation)，再執行：
+
+```bash
+pnpm run build:standalone
+./dist/monorepo --help
+```
+
+產物內含 Bun 與 CLI 依賴。把執行檔複製到相同作業系統與架構的電腦，就能直接執行，無須安裝 Node.js、pnpm 或 Bun。Windows 的產物為 `dist/monorepo.exe`。
+
 ## 開發指南 (Development)
 
-本專案使用 `commander` 進行指令管理。你可以在 `cli` 檔案中輕松擴充功能：
+本專案使用 `commander` 進行指令管理。你可以在 `cli.ts` 檔案中擴充功能：
 
 ```typescript
-// cli
+// cli.ts
 program
   .command('my-command')
   .description('這是一個新指令')
